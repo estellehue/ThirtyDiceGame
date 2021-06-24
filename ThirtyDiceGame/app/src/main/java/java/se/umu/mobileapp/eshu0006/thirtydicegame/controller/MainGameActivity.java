@@ -227,6 +227,8 @@ public class MainGameActivity extends AppCompatActivity {
                 game.setCurrentScore(currentEndScore + game.getCurrentScore());
                 updateCurrentScore();
 
+                if (game.getCurrentRoundNumber().equals(9))
+                    updateEndButton("End Game");
                 if (game.getCurrentRoundNumber().equals(10)) { // If all 10 rounds are played, end game and start new activity
                     rollButton.setEnabled(false);
                     openEndGameActivity();
@@ -443,7 +445,6 @@ public class MainGameActivity extends AppCompatActivity {
 
     /**
      * Method updating the UI - the text on the roll button
-     *
      * @param text The text to update the button with
      */
     private void updateRollButton(String text) {
@@ -452,8 +453,16 @@ public class MainGameActivity extends AppCompatActivity {
     }
 
     /**
+     * Method updating the UI - the text on the end button
+     * @param text The text to update the button with
+     */
+    private void updateEndButton(String text) {
+        final Button endRoundButton = (Button) findViewById(R.id.endRoundBtn);
+        endRoundButton.setText(text);
+    }
+
+    /**
      * Method for getting the text on the roll button.
-     *
      * @return The text on the roll button
      */
     private String getRollButtonText() {

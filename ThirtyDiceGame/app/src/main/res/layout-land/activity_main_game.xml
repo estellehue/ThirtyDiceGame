@@ -7,19 +7,17 @@
     android:screenOrientation="portrait"
     tools:context=".controller.MainGameActivity">
 
-    <!-- Linear layout for the six dice image buttons at the bottom of the app -->
+    <!-- Linear layout for the six dice image buttons at the right bottom of the app -->
     <LinearLayout
         android:id="@+id/diceLinearLayout"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="429dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal"
         android:weightSum="100"
         app:layout_constraintBottom_toTopOf="@+id/t"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rollBtn">
+        app:layout_constraintTop_toBottomOf="@+id/gameRoundsList">
 
         <ImageButton
             android:id="@+id/imageDice0"
@@ -28,8 +26,7 @@
             android:layout_marginRight="2dp"
             android:layout_weight="16.666666"
             android:background="@android:color/white"
-            android:scaleType="fitCenter"
-            ></ImageButton>
+            android:scaleType="fitCenter"></ImageButton>
 
         <ImageButton
             android:id="@+id/imageDice1"
@@ -78,56 +75,59 @@
 
     </LinearLayout>
 
-    <!-- Text view for the current total score, above the dices and next to the roll and end round buttons -->
+    <!-- Text view for the current total score, above the roll and end round buttons -->
     <TextView
         android:id="@+id/totalScoreTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="135dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="2dp"
         android:gravity="center"
         android:text="Score: 0"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/diceLinearLayout"
-        app:layout_constraintEnd_toStartOf="@+id/endRoundBtn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameRoundsList" />
+        app:layout_constraintBottom_toTopOf="@+id/endRoundBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameRoundsList"
+        app:layout_constraintVertical_bias="1.0" />
 
     <!-- Text view for the number of "Throws" at the top of the app -->
     <TextView
         android:id="@+id/throwTxt"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
+        android:layout_marginStart="112dp"
         android:gravity="center"
         android:text="Throw #0"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/desc"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainTxt" />
+        app:layout_constraintStart_toEndOf="@+id/mainTxt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <!-- Text view for the number of "Rounds" at the top of the app -->
     <TextView
         android:id="@+id/rndTxt"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="Round #0"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/desc"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintEnd_toStartOf="@+id/mainTxt"
+        app:layout_constraintHorizontal_bias="0.100
+"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainTxt" />
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <!-- Text view for the list layout, under the throw and round number  -->
+    <!-- Text view for the list layout, under the game name -->
     <TextView
         android:id="@+id/desc"
         android:layout_width="280dp"
@@ -136,7 +136,7 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/gameRoundsList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/throwTxt" />
 
@@ -145,72 +145,68 @@
         android:id="@+id/mainTxt"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
+        android:layout_marginBottom="2dp"
         android:gravity="center"
         android:text="Thirty"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/throwTxt"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/desc"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <!-- Button for the "End Round" and "End Game" of the game -->
     <Button
         android:id="@+id/endRoundBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
         android:enabled="false"
         android:text="End round"
-        app:layout_constraintBottom_toTopOf="@+id/diceLinearLayout"
-        app:layout_constraintEnd_toStartOf="@+id/rollBtn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/totalScoreTxt"
-        app:layout_constraintTop_toBottomOf="@+id/gameRoundsList" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/diceLinearLayout" />
 
     <!-- Button for the "Start Game", "Start Round" and "Roll Dice" of the game -->
     <Button
         android:id="@+id/rollBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="8dp"
         android:text="Start Game"
-        app:layout_constraintBottom_toTopOf="@+id/diceLinearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/endRoundBtn"
-        app:layout_constraintTop_toBottomOf="@+id/gameRoundsList" />
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toEndOf="@+id/endRoundBtn" />
 
     <!-- Text view for the user information on how to play -->
     <TextView
         android:id="@+id/t"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_width="148dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="1dp"
         android:text="Tap on the dice to keep"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diceLinearLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/diceLinearLayout" />
 
     <!-- List view for the different game round score options, each row is represented in the "one_row" -->
     <ListView
         android:id="@+id/gameRoundsList"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/rollBtn"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/diceLinearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc">
-
+        app:layout_constraintTop_toBottomOf="@+id/desc"
+        app:layout_constraintVertical_bias="0.0">
     </ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
