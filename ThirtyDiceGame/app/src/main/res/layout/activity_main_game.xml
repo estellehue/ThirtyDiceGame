@@ -7,7 +7,7 @@
     android:screenOrientation="portrait"
     tools:context=".controller.MainGameActivity">
 
-    <!-- Linear layout for the six dice image buttons at the bottom of the app -->.
+    <!-- Linear layout for the six dice image buttons at the bottom of the app -->
     <LinearLayout
         android:id="@+id/diceLinearLayout"
         android:layout_width="0dp"
