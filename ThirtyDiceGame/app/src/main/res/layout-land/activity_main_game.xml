@@ -78,9 +78,9 @@
     <!-- Text view for the current total score, above the roll and end round buttons -->
     <TextView
         android:id="@+id/totalScoreTxt"
-        android:layout_width="135dp"
+        android:layout_width="103dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="88dp"
+        android:layout_marginEnd="124dp"
         android:layout_marginBottom="2dp"
         android:gravity="center"
         android:text="Score: 0"
@@ -89,7 +89,7 @@
         app:layout_constraintBottom_toTopOf="@+id/endRoundBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameRoundsList"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <!-- Text view for the number of "Throws" at the top of the app -->
     <TextView
@@ -161,8 +161,8 @@
         android:id="@+id/endRoundBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="16dp"
         android:enabled="false"
         android:text="End round"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -174,11 +174,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="Start Game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.227"
         app:layout_constraintStart_toEndOf="@+id/endRoundBtn" />
 
     <!-- Text view for the user information on how to play -->
