@@ -1,7 +1,6 @@
 package java.se.umu.mobileapp.eshu0006.thirtydicegame.controller;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;

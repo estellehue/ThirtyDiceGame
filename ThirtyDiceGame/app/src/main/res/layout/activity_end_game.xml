@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
     tools:context=".controller.EndGameActivity">
 
-    <!-- Button for the "Play Again" a new game -->.
+    <!-- Button for the "Play Again" a new game -->
     <Button
         android:id="@+id/playAgainBtn"
         android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Text view for the final end score of the game, in the middle of the app -->.
+    <!-- Text view for the final end score of the game, in the middle of the app -->
     <TextView
         android:id="@+id/endScoreTxt"
         android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Text view for the user to know the value is the score -->.
+    <!-- Text view for the user to know the value is the score -->
     <TextView
         android:id="@+id/someTxt"
         android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Text view for the end of game, at the top of app -->.
+    <!-- Text view for the end of game, at the top of app -->
     <TextView
         android:id="@+id/conTxt"
         android:layout_width="wrap_content"
@@ -72,6 +72,20 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Text view for user info about max score, at the bottom of app -->
+    <TextView
+        android:id="@+id/maxScoreTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Maximum score is 279"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endScoreTxt"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

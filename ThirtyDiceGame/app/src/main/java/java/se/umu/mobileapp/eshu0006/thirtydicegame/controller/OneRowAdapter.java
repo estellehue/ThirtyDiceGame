@@ -15,17 +15,17 @@ import java.util.List;
 /**
  * Class defining the row layout and binding it to the main activity.
  */
-public class CustomAdapter extends BaseAdapter{
+public class OneRowAdapter extends BaseAdapter{
     private Activity activity;
     private List<OneGameRoundScore> gameScoreOptions;
     private LayoutInflater layoutInflater;
 
     /**
-     * Constructor: creating an instance of CustomAdapter.
+     * Constructor: creating an instance of OneRowAdapter.
      * @param activity The activity to get the LayoutInflater object from.
      * @param gameScoreOptions The rows for all game score options.
      */
-    public CustomAdapter(Activity activity, List<OneGameRoundScore> gameScoreOptions) {
+    public OneRowAdapter(Activity activity, List<OneGameRoundScore> gameScoreOptions) {
         this.activity = activity;
         this.gameScoreOptions = gameScoreOptions;
         this.layoutInflater = activity.getLayoutInflater();

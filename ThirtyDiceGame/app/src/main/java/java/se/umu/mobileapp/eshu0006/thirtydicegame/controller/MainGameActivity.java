@@ -52,7 +52,7 @@ public class MainGameActivity extends AppCompatActivity {
         final Button endRoundButton = (Button) findViewById(R.id.endRoundBtn);
         final Button rollButton = (Button) findViewById(R.id.rollBtn);
         final ListView scoreOptionsList = findViewById(R.id.gameRoundsList);
-        final CustomAdapter adapter = new CustomAdapter(MainGameActivity.this, game.getGameRoundScoreOptions());
+        final OneRowAdapter adapter = new OneRowAdapter(MainGameActivity.this, game.getGameRoundScoreOptions());
 
         scoreOptionsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -118,7 +118,7 @@ public class MainGameActivity extends AppCompatActivity {
      * @param endRoundButton The button for ending the round
      */
     private void scoreOptionsListLogic(View view, int position, Button endRoundButton) {
-        final CustomAdapter adapter = new CustomAdapter(MainGameActivity.this, game.getGameRoundScoreOptions());
+        final OneRowAdapter adapter = new OneRowAdapter(MainGameActivity.this, game.getGameRoundScoreOptions());
         final ListView scoreOptionsList = (ListView) findViewById(R.id.gameRoundsList);
         scoreOptionsList.setAdapter(adapter);
         OneGameRoundScore oneScoreOption = game.getGameRoundScoreOptions().get(position);
@@ -435,7 +435,7 @@ public class MainGameActivity extends AppCompatActivity {
      * Method updating the UI - the list of game round score options
      */
     private void updateListOfRoundScores() {
-        final CustomAdapter adapter = new CustomAdapter(MainGameActivity.this, game.getGameRoundScoreOptions());
+        final OneRowAdapter adapter = new OneRowAdapter(MainGameActivity.this, game.getGameRoundScoreOptions());
         final ListView scoreOptionsList = (ListView) findViewById(R.id.gameRoundsList);
         scoreOptionsList.setAdapter(adapter);
         game.updateGameRoundScoreOptionNames();
