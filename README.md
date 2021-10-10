@@ -1,2 +1,2 @@
 # ThirtyDiceGame
-Android Studios app from the course mobile application development
+Android Studios app for a course in mobile application development. 
